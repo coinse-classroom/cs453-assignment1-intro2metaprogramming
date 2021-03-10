@@ -1,2 +1,2 @@
-if not 3 > 5:
-		print("baba", 42)
+if 3 > 5:
+    print("Answer to life, universe, and everything is", 0)
