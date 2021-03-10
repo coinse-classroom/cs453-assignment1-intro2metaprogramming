@@ -16,7 +16,7 @@ if 3 > 5:
 Then your code should rewrite it as follows:
 
 ```python
-if not 3 > 5:
+if not 42 > 42:
 	print("baba", 42)
 ```
 
