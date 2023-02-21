@@ -34,5 +34,5 @@ The default Python library contains `ast` module that allows you to manipulate t
 
 ### Submission Deadline
 
-You need to submit this assignment before **18:00 on 24th of March, 2021.**
+You need to submit this assignment before **18:00 on 15 of March, 2023.**
 
