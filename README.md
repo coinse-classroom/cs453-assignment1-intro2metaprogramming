@@ -1,10 +1,10 @@
 ## CS453 Assignment 1: Introduction to Metaprogramming
 
-With this assignment, we will learn how to manipulate Python programs programatically (and not by manually editing them). Write a program that accepts another Python program source code, and modifies it. The rewriting should include the following:
+With this assignment, we will learn how to manipulate Python programs programatically (and not by manually editing them). Write a program that accepts another Python program source code, and rewrites it into the same file. The rewriting should include the following:
 
 - Replace all string constants within the given source code with "baba"
 - Replace all numeric constants within the given source code with the number 42
-- Negate all Boolean predicates of `if` and `while` statements within the given source code
+- Wrap all Boolean predicates of `if` and `while` statements within the given source code with parentheses and negate them
 
 For example, suppose the following Python code was the input:
 
@@ -16,8 +16,22 @@ if 3 > 5:
 Then your code should rewrite it as follows:
 
 ```python
-if not 42 > 42:
+if not (42 > 42):
 	print("baba", 42)
+```
+
+Another example. For the following input:
+
+```python
+if not len("hello, world!") < 5:
+  print("What??")
+```
+
+Then after rewriting, it should be:
+
+```python
+if not(not len("baba") < 42):
+  print("baba")
 ```
 
 ### Skeleton
@@ -28,11 +42,11 @@ This repository includes a skeleton code named `rewriter.py` for your rewriting 
 $ python rewriter -t [your target python script file]
 ```
 
-### Libraries
+### Requirements
 
-The default Python library contains `ast` module that allows you to manipulate the Abstract Syntax Tree. Since the assignment requires you to write the modified program back to the original file, you will want to dump the modified AST back into Python code. For this, [`astor`](https://pypi.org/project/astor/) can be useful.
+- Python version >= 3.10
 
-### Submission Deadline
+### Reminders
 
-You need to submit this assignment before **18:00 on 24th of March, 2021.**
-
+- Make sure your submission is in the main branch.
+- Allow enough time to push your changes; do not wait until the last minute.

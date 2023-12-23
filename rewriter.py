@@ -1,4 +1,4 @@
-import astor, ast
+import ast
 import sys
 import argparse
 
@@ -11,12 +11,13 @@ if __name__ == '__main__':
     target = args.target
     sys.argv[1:] = args.remaining
 
-    root = astor.parse_file(target)
+    code = "".join(open(target, "r").readlines())
+    root = ast.parse(code)
 
     # implement rewriting routines here
     # make modifications to the AST
 
-    modified = astor.to_source(root)
+    modified = ast.unparse(root)
     with open(target, "w") as f:
         f.write(modified)
         f.close()
